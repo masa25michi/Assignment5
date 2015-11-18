@@ -15,7 +15,6 @@ public class Tuple{
 		col1 = dataTypeLine.split(comma);
 		col2 = tupleLine.split(comma);
 		attributeList = new ArrayList<Attribute>();
-		
 	}
 	
 	public Tuple(ArrayList<Attribute> attributeJoinList){

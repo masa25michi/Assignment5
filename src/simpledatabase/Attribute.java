@@ -15,7 +15,7 @@ public class Attribute{
 	
 	/**
      * Set the attribute name
-     * @param str the attribute name
+     * @param str the attribute name
      */
 	public void setAttributeName(String str) {
 		attributeName = str;		
@@ -28,7 +28,6 @@ public class Attribute{
 	public void setAttributeType(String type) {		
 		attributeType = new Type(type);
 	}
-		
 	/**
      * Set the attribute value
      * @param type the attribute type

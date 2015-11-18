@@ -15,19 +15,34 @@ public class Projection extends Operator{
 		
 	}
 	
-	
 	/**
      * Return the data of the selected attribute as tuple format
      * @return tuple
      */
 	@Override
 	public Tuple next(){
-		//Delete the lines below and add your code here
-		return null;
+		if(child==null)
+		{
+			return null;
+		}
+		Tuple tuple = child.next();
+		if(tuple==null)
+		{
+			return null;
+		}
 		
+		for(int i=0;i<tuple.getAttributeList().size();i++)
+		{
+			if(tuple.getAttributeList().get(i).getAttributeName().equals(attributePredicate))
+			{
+				newAttributeList.add(tuple.getAttributeList().get(i));
+			}
+		}
+		Tuple tuple1=new Tuple(newAttributeList);
+		newAttributeList = new ArrayList<Attribute>();
+		
+		return tuple1;
 	}
-		
-
 	
 	/**
      * The function is used to get the attribute list of the tuple
